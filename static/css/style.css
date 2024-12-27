@@ -1,0 +1,117 @@
+/* Custom Variables */
+:root {
+    --primary: #b6895b;
+    --secondary: #513c28;
+    --light: #f8f9fa;
+    --dark: #212529;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/MEYDAN CAFE ARKA PLAN.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Menu Cards */
+.menu-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-card .card-title {
+    color: var(--primary);
+}
+
+.menu-card .price {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* Category Pills */
+.category-pills {
+    margin-bottom: 2rem;
+}
+
+.category-pills .nav-link {
+    color: var(--dark);
+    border: 1px solid var(--primary);
+    margin: 0.25rem;
+}
+
+.category-pills .nav-link.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+footer a:hover {
+    color: var(--primary) !important;
+}
+
+/* Social Links */
+.social-links a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary) !important;
+}
+
+/* Custom Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh;
+    }
+    
+    .menu-card img {
+        height: 150px;
+    }
+} 

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Ana Sayfa - {{ block.super }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="display-4">Meydan Cafe'ye Hoşgeldiniz</h1>
+        <p class="lead">En kaliteli kahve çeşitleri ve lezzetli yiyecekler</p>
+        <a href="{% url 'menu:menu_list' %}" class="btn btn-primary btn-lg">Menüyü Gör</a>
+    </div>
+</section>
+
+<!-- Featured Items Section -->
+<section class="container">
+    <h2 class="text-center mb-4">Öne Çıkan Ürünlerimiz</h2>
+    <div class="row">
+        {% for item in featured_items %}
+        <div class="col-md-4">
+            <div class="card menu-card">
+                <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description|truncatewords:20 }}</p>
+                    <p class="price">{{ item.price }} TL</p>
+                    <a href="{% url 'menu:menu_item_detail' item.id %}" class="btn btn-primary">Detaylar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <i class="fas fa-coffee fa-3x mb-3 text-primary"></i>
+            <h3>Kaliteli Kahve</h3>
+            <p>En iyi kahve çekirdekleri ile hazırlanan özel kahvelerimiz</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-clock fa-3x mb-3 text-primary"></i>
+            <h3>Hızlı Servis</h3>
+            <p>Profesyonel ekibimiz ile hızlı ve kaliteli hizmet</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
+            <h3>Özenli Hazırlama</h3>
+            <p>Her detayı düşünülmüş özel tarifler</p>
+        </div>
+    </div>
+</section>
+{% endblock %} 
